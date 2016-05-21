@@ -36,24 +36,24 @@ plt.figure(1)
 #plt.subplots(2,2)
 ax = plt.subplot(511)
 ax.set_title("BSE")
-ax.plot(BSE['Adj Close'],'r-')
+ax.plot(BSE.index,BSE['Adj Close'],'r-')
 
 ax = plt.subplot(512)
-ax.set_title("SBI")
-plt.plot(SBIBO['Adj Close'],'g-')
-plt.plot(SBINS['Adj Close'],'r-')
+plt.title(figure_title, y=1.08)
+#ax.set_title("SBI",fontsize=12,location='left')
+plt.plot(SBIBO.index,SBIBO['Adj Close'],'g-')
 
 ax = plt.subplot(513)
 ax.set_title("L&T")       
-plt.plot(LT['Adj Close'],'b-')
+plt.plot(LT.index,LT['Adj Close'],'b-')
 
 ax = plt.subplot(514)
 ax.set_title("Tata Steel")        
-plt.plot(TIS['Adj Close'],'b-')
+plt.plot(TIS.index,TIS['Adj Close'],'b-')
 
 ax = plt.subplot(515)
 ax.set_title("ONGC")        
-plt.plot(ONGC['Adj Close'],'b-')
+plt.plot(ONGC.index,ONGC['Adj Close'],'b-')
 
 RiskBSE = np.mean(BSE['Adj Close'])/np.std(BSE['Adj Close'])
 print "BSE - %s" %RiskBSE
