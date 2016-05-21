@@ -35,25 +35,26 @@ ONGC = DataReader("ONGC.BO", 'yahoo', StartDate, EndDate)
 plt.figure(1)
 #plt.subplots(2,2)
 ax = plt.subplot(511)
-ax.set_title("BSE")
+plt.title("BSE", y=0.01)
 ax.plot(BSE.index,BSE['Adj Close'],'r-')
 
 ax = plt.subplot(512)
-plt.title(figure_title, y=1.08)
+plt.title("SBI", y=0.01)
 #ax.set_title("SBI",fontsize=12,location='left')
 plt.plot(SBIBO.index,SBIBO['Adj Close'],'g-')
 
 ax = plt.subplot(513)
-ax.set_title("L&T")       
+plt.title("L&T", y=0.01)       
 plt.plot(LT.index,LT['Adj Close'],'b-')
 
 ax = plt.subplot(514)
-ax.set_title("Tata Steel")        
+plt.title("Tata Steel", y=0.01)       
 plt.plot(TIS.index,TIS['Adj Close'],'b-')
 
 ax = plt.subplot(515)
-ax.set_title("ONGC")        
+plt.title("ONGC", y=0.01)      
 plt.plot(ONGC.index,ONGC['Adj Close'],'b-')
+
 
 RiskBSE = np.mean(BSE['Adj Close'])/np.std(BSE['Adj Close'])
 print "BSE - %s" %RiskBSE
